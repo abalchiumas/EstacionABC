@@ -1,0 +1,12 @@
+spring:
+    datasource:
+        hikari:
+            driver-class-name: org.h2.Driver
+            jdbc-url: jdbc:h2:mem:estaciona-abc;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=1;Mode=Oracle;INIT=CREATE SCHEMA IF NOT EXISTS ESTACIONA_ABC
+            minimum-idle: 1
+            maximum-pool-size: 2
+            username: sa
+            password: sa
+    h2:
+        console:
+            enabled: true
