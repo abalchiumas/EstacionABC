@@ -13,4 +13,3 @@ TODO:
 * Split aplication into modules (web and arduino)
 * Dockerize application
 * CI/CD?
-* Onboard to AWS?
