@@ -13,6 +13,6 @@ public class ArduinoController {
 
     @GetMapping(value = "/update-sensors", produces = MediaType.APPLICATION_JSON_VALUE)
     public String updateSensors() {
-        return arduinoService.sensorList();
+        return arduinoService.createJson();
     }
 }

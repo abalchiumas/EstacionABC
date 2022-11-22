@@ -1,26 +1,43 @@
-const int TRIG = 12;
-const int ECHO = 11;
+#include <ArduinoJson.h>
 
-int incomingByte = 0;
+const int trigger = 13;
 
 void setup() {
+  pinMode(trigger, OUTPUT);
   Serial.begin(1200);
-  pinMode(TRIG,OUTPUT);
+
+  StaticJsonDocument<512> jsonResult;
+
+  for (int i = 2; i < trigger; i++) {
+    int distance = sensorRead(i);
+
+    StaticJsonDocument<128> jsonObject;
+    jsonObject["distance"] = distance;
+    jsonObject["occupied"] = ((distance != 0) && (distance < 150));
+    
+    JsonArray data = jsonResult.createNestedArray((String) "digitalPin " + i);
+    data.add(jsonObject);
+  }
+
+  String message;
+  serializeJson(jsonResult,message);
+  Serial.println(message);
+  
+  delay(10);
 }
 
 void loop() {
-  Serial.write(sensor(TRIG,ECHO));
-  delay(100);
+  
 }
 
-int sensor(int trig, int echo){
-  pinMode(echo,INPUT);
-  
-  digitalWrite(trig,LOW);
-  delayMicroseconds(10);
-  digitalWrite(trig,HIGH);
-  delayMicroseconds(50);
-  digitalWrite(trig,LOW);
+int sensorRead(int echo) {
+  pinMode(echo, INPUT);
 
-  return pulseIn(echo,HIGH)/58;
+  digitalWrite(trigger, LOW);
+  delay(10);
+  digitalWrite(trigger, HIGH);
+  delay(10);
+  digitalWrite(trigger, LOW);
+
+  return pulseIn(echo, HIGH) / 58;
 }
