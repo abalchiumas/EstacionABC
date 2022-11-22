@@ -1,8 +1,4 @@
-# EstacionABC
-
-UFABC "Smart" Parking
-
-
+# EstacionABC - UFABC "Smart" Parking
 
 TODO:
 * Add sonar for code coverage
