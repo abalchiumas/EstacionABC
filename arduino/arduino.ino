@@ -15,7 +15,7 @@ void setup() {
     jsonObject["distance"] = distance;
     jsonObject["occupied"] = ((distance != 0) && (distance < 150));
     
-    JsonArray data = jsonResult.createNestedArray((String) "digitalPin " + i);
+    JsonArray data = jsonResult.createNestedArray((String) "digitalPin" + i);
     data.add(jsonObject);
   }
 
