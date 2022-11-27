@@ -36,26 +36,22 @@ background-color:darkgreen;
     top:50%;
     left:50%;
     transform: translate(-50%, -50%) translate(-75px, -100px);
-    background-color: red;
 }
 #vaga2{
     position:absolute;
     top:50%;
     left:50%;
     transform: translate(-50%, -50%) translate(-75px, 100px) rotate(180deg);
-    background-color: red;
 }
 #vaga3{
     position:absolute;
     top:50%;
     left:50%;
     transform: translate(-50%, -50%) translate(75px, -100px);
-    background-color: lime;
 }
 #vaga4{
     position:absolute;
     top:50%;
     left:50%;
     transform: translate(-50%, -50%) translate(75px, 100px) rotate(180deg);
-    background-color: red;
 }
