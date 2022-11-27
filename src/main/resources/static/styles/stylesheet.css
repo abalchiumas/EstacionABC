@@ -1,0 +1,67 @@
+.body{
+    margin: 0px;
+}
+
+.header{
+display:flex;
+flex-direction:row;
+height: 80px;
+background-color:darkgreen;
+}
+
+.header img{
+    width:auto;
+    height:70px;
+    padding-left:5px;
+    padding-top:5px;
+}
+
+.header h1 {
+    font-family: 'Open Sans', sans-serif;
+    position: relative;
+    left: 10px;
+    color: white;
+  }
+
+.vagaLivre{
+    width: 140px;
+    height: 200px;
+    border-right: 10px solid yellow;
+    border-bottom: 10px solid yellow;
+    border-left: 10px solid yellow;
+    background-color: lime;
+}
+
+.vagaOcupada{
+    width: 140px;
+    height: 200px;
+    border-right: 10px solid yellow;
+    border-bottom: 10px solid yellow;
+    border-left: 10px solid yellow;
+    background-color: red;
+}
+
+#vaga1{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%) translate(-75px, -100px);
+}
+#vaga2{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%) translate(-75px, 100px) rotate(180deg);
+}
+#vaga3{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%) translate(75px, -100px);
+}
+#vaga4{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%) translate(75px, 100px) rotate(180deg);
+}
