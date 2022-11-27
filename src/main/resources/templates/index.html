@@ -1,38 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt">
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="stylesheet" href ="stylesheet.css">
+    <link th:href ="@{/styles/stylesheet.css}" rel="stylesheet">
     <title>UFABC Smart Parking</title>
 </head>
+
 <body style="margin:0">
-    <div class="header">
-        <img src="img/logotipo-ufabc-abaixo.png" alt="logo">
-        <h1>UFABC Smart Parking</h1>
-    </div>
+<div class="header">
+    <img th:src="@{/images/logotipo-ufabc-abaixo.png}" alt="logo">
+    <h1>UFABC Smart Parking</h1>
+</div>
 
-    <div class="vaga" id="vaga1">
-    </div>
+<div class="vaga" id="vaga1">
+</div>
 
-    <div class="vaga" id="vaga2">
-    </div>
+<div class="vaga" id="vaga2">
+</div>
 
-    <div class="vaga" id="vaga3">
-    </div>
+<div class="vaga" id="vaga3">
+</div>
 
-    <div class="vaga" id="vaga4">
+<div class="vaga" id="vaga4">
 
-    </div>
-    <script>
-        function getElement(id) {
+</div>
+<script>
+    function getElement(id) {
         return document.getElementById(id);
-        }
-        function getData(){
-            $.ajax({
-            url: 'http://localhost:8080/update-sensors',
+    }
+    function getData(){
+        $.ajax({
+            url: '/update-sensors',
             type: "GET",
             dataType: "json",
             success: function (data) {
@@ -64,15 +65,12 @@
             }
         },
 
-)}
-$(document).ready(function() {
-  getData();
-});
-;
-
-
-
-
+        )}
+    $(document).ready(function() {
+        getData();
+    });
+    ;
 </script>
+
 </body>
 </html>
