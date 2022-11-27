@@ -23,12 +23,22 @@ background-color:darkgreen;
     color: white;
   }
 
-.vaga{
+.vagaLivre{
     width: 140px;
     height: 200px;
     border-right: 10px solid yellow;
     border-bottom: 10px solid yellow;
     border-left: 10px solid yellow;
+    background-color: lime;
+}
+
+.vagaOcupada{
+    width: 140px;
+    height: 200px;
+    border-right: 10px solid yellow;
+    border-bottom: 10px solid yellow;
+    border-left: 10px solid yellow;
+    background-color: red;
 }
 
 #vaga1{

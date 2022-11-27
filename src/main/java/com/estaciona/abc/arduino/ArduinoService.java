@@ -84,7 +84,7 @@ public class ArduinoService {
         }
     }
 
-    public String createJson() {
+    public String jsonPassThrough() {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             return objectMapper.writeValueAsString(iterateThroughPorts(findConnections()));

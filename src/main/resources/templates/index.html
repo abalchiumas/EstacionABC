@@ -5,61 +5,77 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link th:href ="@{/styles/stylesheet.css}" rel="stylesheet">
+    <link href ="/styles/stylesheet.css" rel="stylesheet">
     <title>UFABC Smart Parking</title>
 </head>
 
 <body style="margin:0">
 <div class="header">
-    <img th:src="@{/images/logotipo-ufabc-abaixo.png}" alt="logo">
+    <img src="/images/logotipo-ufabc-abaixo.png" alt="logo">
     <h1>UFABC Smart Parking</h1>
 </div>
 
-<div class="vaga" id="vaga1">
-</div>
+<div class="vagaLivre" id="vaga1"></div>
 
-<div class="vaga" id="vaga2">
-</div>
+<div class="vagaLivre" id="vaga2"></div>
 
-<div class="vaga" id="vaga3">
-</div>
+<div class="vagaLivre" id="vaga3"></div>
 
-<div class="vaga" id="vaga4">
+<div class="vagaLivre" id="vaga4"></div>
 
-</div>
-<script>
-    function getElement(id) {
-        return document.getElementById(id);
-    }
+<!--<div class="vaga" id="vaga5"></div>-->
+
+<!--<div class="vaga" id="vaga6"></div>-->
+
+<!--<div class="vaga" id="vaga7"></div>-->
+
+<!--<div class="vaga" id="vaga8"></div>-->
+
+<!--<div class="vaga" id="vaga9"></div>-->
+
+<!--<div class="vaga" id="vaga10"></div>-->
+
+<!--<div class="vaga" id="vaga11"></div>-->
+
+<script id="updateList">
+
     function getData(){
         $.ajax({
             url: '/update-sensors',
             type: "GET",
             dataType: "json",
             success: function (data) {
-                if(data.main.digitalPin2[0].occupied == true){
-                    getElement("vaga1").style.backgroundColor = "red"
+                if (data.main.digitalPin2[0].occupied == true) {
+                    document.getElementById("vaga1").classList.remove("vagaLivre");
+                    document.getElementById("vaga1").classList.add("vagaOcupada");
                 }
-                else{
-                    getElement("vaga1").style.backgroundColor = "lime"
+                else {
+                    document.getElementById("vaga1").classList.remove("vagaOcupada");
+                    document.getElementById("vaga1").classList.add("vagaLivre");
                 }
-                if(data.main.digitalPin3[0].occupied == true){
-                    getElement("vaga2").style.backgroundColor = "red"
+                if (data.main.digitalPin3[0].occupied == true) {
+                    document.getElementById("vaga2").classList.remove("vagaLivre");
+                    document.getElementById("vaga2").classList.add("vagaOcupada");
                 }
-                else{
-                    getElement("vaga2").style.backgroundColor = "lime"
+                else {
+                    document.getElementById("vaga2").classList.remove("vagaOcupada");
+                    document.getElementById("vaga2").classList.add("vagaLivre");
                 }
-                if(data.main.digitalPin4[0].occupied == true){
-                    getElement("vaga3").style.backgroundColor = "red"
+                if (data.main.digitalPin4[0].occupied == true) {
+                    document.getElementById("vaga3").classList.remove("vagaLivre");
+                    document.getElementById("vaga3").classList.add("vagaOcupada");
                 }
-                else{
-                    getElement("vaga3").style.backgroundColor = "lime"
+                else {
+                    document.getElementById("vaga3").classList.remove("vagaOcupada");
+                    document.getElementById("vaga3").classList.add("vagaLivre");
                 }
-                if(data.main.digitalPin5[0].occupied == true){
-                    getElement("vaga4").style.backgroundColor = "red"
+                if (data.main.digitalPin5[0].occupied == true) {
+                    document.getElementById("vaga4").classList.remove("vagaLivre");
+                    document.getElementById("vaga4").classList.add("vagaOcupada");
                 }
-                else{
-                    getElement("vaga4").style.backgroundColor = "lime"
+                else {
+                    document.getElementById("vaga4").classList.remove("vagaOcupada");
+                    document.getElementById("vaga4").classList.add("vagaLivre");
                 }
                 setTimeout(getData, 5000)
             }
