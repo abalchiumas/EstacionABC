@@ -35,9 +35,9 @@ int sensorRead(int echo) {
   pinMode(echo, INPUT);
 
   digitalWrite(trigger, LOW);
-  delayMicroseconds(2);
-  digitalWrite(trigger, HIGH);
   delayMicroseconds(10);
+  digitalWrite(trigger, HIGH);
+  delayMicroseconds(50);
   digitalWrite(trigger, LOW);
 
   return pulseIn(echo, HIGH) / 58;
