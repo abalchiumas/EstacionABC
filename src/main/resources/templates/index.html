@@ -49,65 +49,37 @@
 
     function getData(){
         $.ajax({
-            url: '/update-sensors',
-            type: "GET",
-            dataType: "json",
-            success: function (data) {
-                let i = 1
-                for (let key in data) {
-                    let value = data[key];
-                    for (let key in value){
-                        let value2 = value[key]
-                        for (let key in value2){
-                            let value3 = value2[key]
-                            if (value3.occupied == true) {
-                                document.getElementById("vaga" + i).classList.remove("vagaLivre");
-                                document.getElementById("vaga" + i).classList.add("vagaOcupada");
+                url: '/update-sensors',
+                type: "GET",
+                dataType: "json",
+                success: function (data) {
+                    let i = 1
+                    for (let key in data) {
+                        let value = data[key];
+                        for (let key in value){
+                            let value2 = value[key]
+                            for (let key in value2){
+                                let value3 = value2[key]
+                                if (value3.occupied == true) {
+                                    document.getElementById("vaga" + i).classList.remove("vagaLivre");
+                                    document.getElementById("vaga" + i).classList.add("vagaOcupada");
+                                }
+                                else {
+                                    document.getElementById("vaga" + i).classList.remove("vagaOcupada");
+                                    document.getElementById("vaga" + i).classList.add("vagaLivre");
+                                }
+                                i += 1
                             }
-                            else {
-                                document.getElementById("vaga" + i).classList.remove("vagaOcupada");
-                                document.getElementById("vaga" + i).classList.add("vagaLivre");
-                            }
-                            i = i + 1
-
                         }
                     }
+                    setTimeout(getData, 30000)
                 }
-
-
-                /*if (data[0].digitalPin3[0].occupied == true) {
-                    document.getElementById("vaga" + 2).classList.remove("vagaLivre");
-                    document.getElementById("vaga" + 2).classList.add("vagaOcupada");
-                }
-                else {
-                    document.getElementById("vaga" + 2).classList.remove("vagaOcupada");
-                    document.getElementById("vaga" + 2).classList.add("vagaLivre");
-                }
-                if (data[0].digitalPin4[0].occupied == true) {
-                    document.getElementById("vaga" + 3).classList.remove("vagaLivre");
-                    document.getElementById("vaga" + 3).classList.add("vagaOcupada");
-                }
-                else {
-                    document.getElementById("vaga" + 3).classList.remove("vagaOcupada");
-                    document.getElementById("vaga" + 3).classList.add("vagaLivre");
-                }
-                if (data[0].digitalPin5[0].occupied == true) {
-                    document.getElementById("vaga" + 4).classList.remove("vagaLivre");
-                    document.getElementById("vaga" + 4).classList.add("vagaOcupada");
-                }
-                else {
-                    document.getElementById("vaga" + 4).classList.remove("vagaOcupada");
-                    document.getElementById("vaga" + 4).classList.add("vagaLivre");
-                }*/
-                setTimeout(getData, 60000)
-            }
-        },
+            },
 
         )}
     $(document).ready(function() {
         getData();
     });
-    ;
 </script>
 
 </body>
