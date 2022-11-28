@@ -9,6 +9,6 @@ server:
     include-message: always
     include-binding-errors: always
 
-logging:
-  level:
-    web: DEBUG
+#logging:
+#  level:
+#    web: DEBUG

@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class ArduinoController {
 
     private final ArduinoService arduinoService;
-
     @GetMapping(value = "/update-sensors", produces = MediaType.APPLICATION_JSON_VALUE)
     public String updateSensors() {
         return arduinoService.jsonPassThrough();
+
     }
 }
