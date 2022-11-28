@@ -22,8 +22,34 @@ background-color:darkgreen;
     left: 10px;
     color: white;
   }
+.vagaLivre h2 {
+    font-family: 'Open Sans', sans-serif;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -110%);
+    transform: translate(-50%, -110%);
+    font-size:80px;
+    color: gray;
+    opacity: 50%
+  }
+
+.vagaOcupada h2 {
+    font-family: 'Open Sans', sans-serif;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -110%);
+    transform: translate(-50%, -110%);
+    font-size:80px;
+    color: gray;
+    opacity: 50%
+  }
 
 .vagaLivre{
+    justify-content: center;
+    align-items: center;
+    font-color: green;
     width: 140px;
     height: 200px;
     border-right: 10px solid yellow;
@@ -33,6 +59,9 @@ background-color:darkgreen;
 }
 
 .vagaOcupada{
+    justify-content: center;
+    align-items: center;
+    font-color: #8B0000;
     width: 140px;
     height: 200px;
     border-right: 10px solid yellow;
@@ -53,6 +82,9 @@ background-color:darkgreen;
     left:50%;
     transform: translate(-50%, -50%) translate(-75px, 100px) rotate(180deg);
 }
+#vaga2 h2{
+    transform: translate(-50%, -100%) rotate(180deg);
+}
 #vaga3{
     position:absolute;
     top:50%;
@@ -64,4 +96,63 @@ background-color:darkgreen;
     top:50%;
     left:50%;
     transform: translate(-50%, -50%) translate(75px, 100px) rotate(180deg);
+}
+#vaga4 h2{
+    transform: translate(-50%, -100%) rotate(180deg);
+}
+#vaga5{
+    border-right: 0px solid yellow;
+    border-bottom: 0px solid yellow;
+    border-left: 0px solid yellow;
+    width: 0px;
+    height: 0px;
+    position:absolute;
+}
+#vaga6{
+    border-right: 0px solid yellow;
+    border-bottom: 0px solid yellow;
+    border-left: 0px solid yellow;
+    width: 0px;
+    height: 0px;
+    position:absolute;
+}
+#vaga7{
+    border-right: 0px solid yellow;
+    border-bottom: 0px solid yellow;
+    border-left: 0px solid yellow;
+    width: 0px;
+    height: 0px;
+    position:absolute;
+}
+#vaga8{
+    border-right: 0px solid yellow;
+    border-bottom: 0px solid yellow;
+    border-left: 0px solid yellow;
+    width: 0px;
+    height: 0px;
+    position:absolute;
+}
+#vaga9{
+    border-right: 0px solid yellow;
+    border-bottom: 0px solid yellow;
+    border-left: 0px solid yellow;
+    width: 0px;
+    height: 0px;
+    position:absolute;
+}
+#vaga10{
+    border-right: 0px solid yellow;
+    border-bottom: 0px solid yellow;
+    border-left: 0px solid yellow;
+    width: 0px;
+    height: 0px;
+    position:absolute;
+}
+#vaga11{
+    border-right: 0px solid yellow;
+    border-bottom: 0px solid yellow;
+    border-left: 0px solid yellow;
+    width: 0px;
+    height: 0px;
+    position:absolute;
 }

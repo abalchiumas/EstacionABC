@@ -15,77 +15,71 @@
     <h1>UFABC Smart Parking</h1>
 </div>
 
-<div class="vagaLivre" id="vaga1"></div>
+<div class="vagaLivre" id="vaga1">
+    <h2>1</h2>
+</div>
 
-<div class="vagaLivre" id="vaga2"></div>
+<div class="vagaLivre" id="vaga2">
+    <h2>2</h2>
+</div>
 
-<div class="vagaLivre" id="vaga3"></div>
+<div class="vagaLivre" id="vaga3">
+    <h2>3</h2>
+</div>
 
-<div class="vagaLivre" id="vaga4"></div>
+<div class="vagaLivre" id="vaga4">
+    <h2>4</h2>
+</div>
 
-<!--<div class="vaga" id="vaga5"></div>-->
+<div class="vaga" id="vaga5"></div>
 
-<!--<div class="vaga" id="vaga6"></div>-->
+<div class="vaga" id="vaga6"></div>
 
-<!--<div class="vaga" id="vaga7"></div>-->
+<div class="vaga" id="vaga7"></div>
 
-<!--<div class="vaga" id="vaga8"></div>-->
+<div class="vaga" id="vaga8"></div>
 
-<!--<div class="vaga" id="vaga9"></div>-->
+<div class="vaga" id="vaga9"></div>
 
-<!--<div class="vaga" id="vaga10"></div>-->
+<div class="vaga" id="vaga10"></div>
 
-<!--<div class="vaga" id="vaga11"></div>-->
+<div class="vaga" id="vaga11"></div>
 
 <script id="updateList">
 
     function getData(){
         $.ajax({
-            url: '/update-sensors',
-            type: "GET",
-            dataType: "json",
-            success: function (data) {
-                if (data[0].digitalPin2[0].occupied == true) {
-                    document.getElementById("vaga1").classList.remove("vagaLivre");
-                    document.getElementById("vaga1").classList.add("vagaOcupada");
+                url: '/update-sensors',
+                type: "GET",
+                dataType: "json",
+                success: function (data) {
+                    let i = 1
+                    for (let key in data) {
+                        let value = data[key];
+                        for (let key in value){
+                            let value2 = value[key]
+                            for (let key in value2){
+                                let value3 = value2[key]
+                                if (value3.occupied == true) {
+                                    document.getElementById("vaga" + i).classList.remove("vagaLivre");
+                                    document.getElementById("vaga" + i).classList.add("vagaOcupada");
+                                }
+                                else {
+                                    document.getElementById("vaga" + i).classList.remove("vagaOcupada");
+                                    document.getElementById("vaga" + i).classList.add("vagaLivre");
+                                }
+                                i += 1
+                            }
+                        }
+                    }
+                    setTimeout(getData, 30000)
                 }
-                else {
-                    document.getElementById("vaga1").classList.remove("vagaOcupada");
-                    document.getElementById("vaga1").classList.add("vagaLivre");
-                }
-                if (data[0].digitalPin3[0].occupied == true) {
-                    document.getElementById("vaga2").classList.remove("vagaLivre");
-                    document.getElementById("vaga2").classList.add("vagaOcupada");
-                }
-                else {
-                    document.getElementById("vaga2").classList.remove("vagaOcupada");
-                    document.getElementById("vaga2").classList.add("vagaLivre");
-                }
-                if (data[0].digitalPin4[0].occupied == true) {
-                    document.getElementById("vaga3").classList.remove("vagaLivre");
-                    document.getElementById("vaga3").classList.add("vagaOcupada");
-                }
-                else {
-                    document.getElementById("vaga3").classList.remove("vagaOcupada");
-                    document.getElementById("vaga3").classList.add("vagaLivre");
-                }
-                if (data[0].digitalPin5[0].occupied == true) {
-                    document.getElementById("vaga4").classList.remove("vagaLivre");
-                    document.getElementById("vaga4").classList.add("vagaOcupada");
-                }
-                else {
-                    document.getElementById("vaga4").classList.remove("vagaOcupada");
-                    document.getElementById("vaga4").classList.add("vagaLivre");
-                }
-                setTimeout(getData, 5000)
-            }
-        },
+            },
 
         )}
     $(document).ready(function() {
         getData();
     });
-    ;
 </script>
 
 </body>
