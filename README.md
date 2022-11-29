@@ -1,7 +1,6 @@
 # EstacionABC - UFABC "Smart" Parking
 
-![image](https://user-images.githubusercontent.com/74436565/204113824-26162345-7770-4b72-96ec-22da3d2bb260.png)
-
+![aaaaaaa](https://user-images.githubusercontent.com/74436565/204424296-116dc81f-6216-46fa-b166-01ae23ade95a.gif)
 
 TODO:
 * Add sonar for code coverage
