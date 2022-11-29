@@ -4,7 +4,7 @@
 
 ## Showcase
 
-[![Protótipo de projeto](https://img.youtube.com/vi/bkqiC5CrhQw/0.jpg)](https://youtu.be/bkqiC5CrhQw "Protótipo de projeto")
+[Engenharia Unificada II - Protótipo de projeto](https://youtu.be/bkqiC5CrhQw)
 
 ### TODO:
 * Add sonar for code coverage
