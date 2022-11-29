@@ -16,7 +16,7 @@ Onboard the [code](https://github.com/abalchiumas/EstacionABC/blob/main/arduino/
 
 ### Multi sensor
 
-It was only tested inside [Tinkercad](https://www.tinkercad.com/), not phisically because I don't have enough components to build something like this.
+It was only tested inside [Tinkercad](https://www.tinkercad.com/), not physically because I don't have enough components to build something like this.
 
 ![Multi sensor circuit](https://user-images.githubusercontent.com/74436565/204427337-0fade1c3-36a0-40ab-899c-3c1e609dca85.png)
 
