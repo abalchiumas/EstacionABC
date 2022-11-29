@@ -24,7 +24,7 @@ Run the Spring Boot application and go to http://localhost:8080/.
 
 The app Rest Controller is called through the JavaScript function inside the [index.html](https://github.com/abalchiumas/EstacionABC/blob/main/src/main/resources/templates/index.html) file every 30 seconds.
 
-This will connect to the serial port and Arduino will iterate through all digital pins below your trigger (from 2 to wherever you set your HC-SR04 trigger to - e.g. 13) and send a JSon containing each digital pin, the distance measured and if its occupied or not (below 150 centimeters is considered to be occupied) back to Java, which will pass it along to the endpoint at your localhost.
+This will connect to the serial port and Arduino will iterate through all digital pins below your trigger (from 2 to wherever you set your HC-SR04 trigger to - e.g. 13) and send a json containing each digital pin, the distance measured and if its occupied or not (below 150 centimeters is considered to be occupied) back to Java, which will pass it along to the endpoint at your localhost.
 
 ## TODO:
 * Add sonar for code coverage
