@@ -29,6 +29,6 @@ This will connect to the serial port and Arduino will iterate through all digita
 ## TODO:
 * Add sonar for code coverage
 * Unit tests using JUnit5
-* Use NRF24L01 for Arduino Wireless communication
+* Use NRF24L01 for Arduino wireless communication
 * Split aplication into modules (web and arduino)
 * Dockerize web module
